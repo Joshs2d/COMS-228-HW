@@ -1,0 +1,29 @@
+package edu.iastate.cs228.hw1;
+
+import static org.junit.Assert.*;
+import org.junit.Test;;
+
+public class GenomicDNASequenceTest {
+
+	@Test
+	public void test() {
+		String probst3 = new String("MDMAF");
+		GenomicDNASequence gdnaobj = new GenomicDNASequence( probst3.toCharArray() );
+		//Invalid sequence letter for class edu.iastate.cs228.hw1.GenomicDNASequence
+	}
+	@Test
+	public void test2() {
+		String probst3 = new String("GCCTTGTCCATCTGAGTTTCGTAGACGACGTCGTCAATCTGCAGCGGTGGCGGCATGGAA");
+		GenomicDNASequence gdnaobj = new GenomicDNASequence( probst3.toCharArray() );
+		gdnaobj.markCoding(1, 6);
+		//FINE, should be array from index 1-6.
+	}
+	@Test
+	public void test3() {
+		String probst3 = new String("TGCH");
+		GenomicDNASequence gdnaobj = new GenomicDNASequence( probst3.toCharArray() );
+		int[] nice = {1,3};
+		gdnaobj.extractExons(nice);
+		//should return GCH
+	}	
+}
