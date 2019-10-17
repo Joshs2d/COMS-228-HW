@@ -1,0 +1,32 @@
+package edu.iastate.cs228.hw1;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ProteinSequenceTest {
+
+	@Test
+	public void test() {
+		String probst4 = new String("BJUu");
+		ProteinSequence probj = new ProteinSequence( probst4.toCharArray() );
+		for(int i = 0; i<probj.seqLength();i++){
+			System.out.println(probj.isValidLetter(probj.getSeq()[i]));
+		}
+		//Should be false;
+	}
+	@Test
+	public void test2() {	
+		String probst = new String("T$G");
+		ProteinSequence seqobj = new ProteinSequence( probst.toCharArray() );
+		//Invalid sequence letter for class edu.iastate.cs228.hw1.Sequence
+		}
+		
+	@Test
+	public void test3() {
+		String probst = new String("ATCG");
+		ProteinSequence seqobj = new ProteinSequence( probst.toCharArray() );
+		//FINE
+		}
+		
+}
